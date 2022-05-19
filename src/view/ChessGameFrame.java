@@ -73,10 +73,8 @@ public class ChessGameFrame extends JFrame {
 
         addFileChooser();
         playback();
-
         changeSkin();
         addBackground();
-
     }
 
     private void addLabel() {
@@ -257,9 +255,23 @@ public class ChessGameFrame extends JFrame {
         im.setOpaque(true);
         add(im);
     }
-    public static void dead(String warning){
+    public  static void dead(String warning){
         JOptionPane j=new JOptionPane();
-        j.showMessageDialog(null,warning);
+        JOptionPane.showMessageDialog(null,warning);
+    }
+    public static boolean isClose;
+
+    public static void dead2(String warning){
+        int result=JOptionPane.showOptionDialog(null,warning,"Next Step",JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE,null,new String[]{"Exit","Restart"},null);
+        if(result==JOptionPane.OK_OPTION){
+            System.exit(0);
+            System.exit(0);
+        }
+//        if(result==0){
+//            isClose=true;
+//        }else if(result==1){
+//            isClose=false;
+//        }
     }
 
     private void changeSkin(){
@@ -486,9 +498,6 @@ public class ChessGameFrame extends JFrame {
         return chessboard;
     }
 
-
-
-
     private void addFileChooser(){
         button7.setLocation(HEIGHT, HEIGHT / 10 + 470);
         button7.setSize(200, 40);
@@ -503,9 +512,6 @@ public class ChessGameFrame extends JFrame {
             file=jfc.getSelectedFile();
             gameController.loadGameFromFile(file.getAbsolutePath());
         });
-        }
-        public void Time(){
-        time();
         }
 
     public GameController getGameController() {

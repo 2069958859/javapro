@@ -183,18 +183,30 @@ public class Chessboard extends JComponent {
         chess2.repaint();
         String warningw = "Black win!";
         String warningb = "White win!";
-        if(isjiangsi()){
 //            ChessGameFrame.dead(warningw);
+        if(isjiangsi()){
 
         }
         if (isDeadw) {
-            ChessGameFrame.dead(warningw);
+            dead2(warningw);
+            initall();
+            setCurrentColor(ChessColor.BLACK);
+            showwhite();
+            repaint();
+            isDeadw=false;
         }
         else if (isDeadb) {
-            ChessGameFrame.dead(warningb);
+            dead2(warningb);
+            initall();
+            setCurrentColor(ChessColor.BLACK);
+            showwhite();
+            repaint();
+            isDeadb=false;
+
         }
 
     }
+
 
 
     public boolean otherChessCanMoveTo(ChessComponent chess2) {
