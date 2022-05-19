@@ -493,6 +493,9 @@ public class ChessGameFrame extends JFrame {
         button7.setOpaque(true);
         add(button7);
 
+
+
+
         button7.addActionListener(e -> {
             // TODO Auto-generated method stub
             JFileChooser jfc=new JFileChooser("/Users/wangpinhuang/Desktop/proj");
