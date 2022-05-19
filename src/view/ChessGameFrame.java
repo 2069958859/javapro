@@ -486,16 +486,15 @@ public class ChessGameFrame extends JFrame {
         return chessboard;
     }
 
+
+
+
     private void addFileChooser(){
         button7.setLocation(HEIGHT, HEIGHT / 10 + 470);
         button7.setSize(200, 40);
         button7.setFont(new Font("Rockwell", Font.BOLD, 20));
         button7.setOpaque(true);
         add(button7);
-
-
-
-
         button7.addActionListener(e -> {
             // TODO Auto-generated method stub
             JFileChooser jfc=new JFileChooser("/Users/wangpinhuang/Desktop/proj");
