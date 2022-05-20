@@ -4,16 +4,18 @@ import Music.Music;
 import model.ChessComponent;
 import view.Chessboard;
 
+import java.util.Date;
+
 public class ClickController {
     private final Chessboard chessboard;
-    private ChessComponent first;
+    public ChessComponent first;
     public static int n = 0;
-    Music audioPlayWave2 = new Music("aa.wav");
+
     public ClickController(Chessboard chessboard) {
         this.chessboard = chessboard;
     }
+
     public void onClick(ChessComponent chessComponent) {
-        n++;
         if (first == null) {
             if (handleFirst(chessComponent)) {
                 chessComponent.setSelected(true);
@@ -29,7 +31,6 @@ public class ClickController {
                 recordFirst.repaint();
             } else if (handleSecond(chessComponent)) {
                 //repaint in swap chess method.
-
                 chessboard.swapChessComponents(first, chessComponent);
                 chessboard.swapColor();
                 chessboard.repaint();
@@ -39,6 +40,10 @@ public class ClickController {
 
         }
     }
+
+
+
+
 
     /**
      * @param chessComponent 目标选取的棋子

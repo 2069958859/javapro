@@ -47,8 +47,6 @@ public class ChessStartFrame extends JFrame {
         this.dispose();
         ChessGameFrame mainFrame = new ChessGameFrame(1000, 750);
         mainFrame.setVisible(true);
-
-
     }
 
 //        ImageIcon icon2=new ImageIcon("./images/img2.jpg");

@@ -1,6 +1,7 @@
 package model;
 
 import Music.Music;
+import Yinxiao.Sound;
 import sun.audio.AudioPlayer;
 import view.ChessGameFrame;
 import view.ChessboardPoint;
@@ -118,13 +119,9 @@ public abstract class ChessComponent extends JComponent {
         if (e.getID() == MouseEvent.MOUSE_PRESSED) {
             System.out.printf("Click [%d,%d]\n", chessboardPoint.getX(), chessboardPoint.getY());
             clickController.onClick(this);
-            try{
-                FileInputStream file=new FileInputStream("aa.wav");
-                AudioStream audioStream=new AudioStream(file);
-                AudioPlayer.player.start(audioStream);
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
+//           Sound sound=new Sound("aa.wav");
+//           sound.start();
+
         }
     }
 

@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -44,9 +45,8 @@ public class Chessboard extends JComponent {
         Chessboard.x = x;
     }
 //     static int huiqicishu=
-
+    public static boolean swap;
     private static final int CHESSBOARD_SIZE = 8;
-
     private final ChessComponent[][] chessComponents = new ChessComponent[CHESSBOARD_SIZE][CHESSBOARD_SIZE];
     public static ChessColor currentColor = ChessColor.WHITE;
 
@@ -136,9 +136,11 @@ public class Chessboard extends JComponent {
         add(chessComponents[row][col] = chessComponent);
     }
 
+
+
+
     public void swapChessComponents(ChessComponent chess1, ChessComponent chess2) {  //将死
         // Note that chess1 has higher priority, 'destroys' chess2 if exists.
-
         if (!(chess2 instanceof EmptySlotComponent)) {
             remove(chess2);
 
@@ -425,9 +427,12 @@ public class Chessboard extends JComponent {
         }
     }
 
-    public void swapColor() {
+    public static void swapColor() {
         currentColor = currentColor == ChessColor.BLACK ? ChessColor.WHITE : ChessColor.BLACK;
     }
+
+
+
 
     public void initRookOnBoard(int row, int col, ChessColor color) {
         ChessComponent chessComponent = new RookChessComponent(new ChessboardPoint(row, col), calculatePoint(row, col), color, clickController, CHESS_SIZE);

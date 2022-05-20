@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
@@ -92,6 +93,7 @@ public class ChessGameFrame extends JFrame {
         if (getCurrentColor() == ChessColor.WHITE) {
             statusLabel.setText("Black's Round");
         }
+
     }
 
     public static void changelabelload() {
