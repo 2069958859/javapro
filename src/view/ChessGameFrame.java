@@ -1,6 +1,7 @@
 package view;
 
 import Music.Music;
+import Music.Video;
 import controller.ClickController;
 import controller.GameController;
 import model.*;
@@ -10,6 +11,9 @@ import java.io.File;
 import javax.swing.*;
 import java.awt.*;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -50,6 +54,7 @@ public class ChessGameFrame extends JFrame {
     JButton button8 = new JButton("Repentance");
     static  JLabel im=new JLabel();
     static JButton button7=new JButton("Open");
+    static JButton button9=new JButton("AI");
     static File file;
 
     public ChessGameFrame(int width, int height) {
@@ -72,10 +77,11 @@ public class ChessGameFrame extends JFrame {
         addSaveButton();
         addhuiqibutton();
         addloadLabel();
-
+        addIA();
         addFileChooser();
         playback();
         changeSkin();
+        //xie();
         addBackground();
         Toolkit kit = Toolkit.getDefaultToolkit();
         Image img = kit.getImage("./images/nn.png");
@@ -170,6 +176,33 @@ public class ChessGameFrame extends JFrame {
                 repaint();
 //            }
             }
+        });
+    }
+    private void addIA(){
+        button9.setLocation(450,15);
+        button9.setSize(200, 40);
+        button9.setFont(new Font("Bradley Hand", Font.BOLD, 35));
+        button9.setBorderPainted(false);
+        button9.setContentAreaFilled(false);
+        add(button9);
+        button9.addActionListener((e) ->{
+            Desktop desktop = Desktop.getDesktop();
+
+            URI uri = null; //创建URI统一资源标识符
+            try {
+                uri = new URI("https://www.bilibili.com/video/BV1GJ411x7h7?spm_id_from=333.337.search-card.all.click");
+            } catch (URISyntaxException ex) {
+                ex.printStackTrace();
+            }
+
+            try {
+                desktop.browse(uri);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+//            JOptionPane j=new JOptionPane();
+//            ImageIcon icon=new ImageIcon("./images/aniya.png");
+//            JOptionPane.showMessageDialog(null,"https://search.bilibili.com/all?vt=65342903&keyword=Never%20Gonna%20Give%20You%20Up&from_source=webtop_search&spm_id_from=333.1007","Winner",JOptionPane.PLAIN_MESSAGE,icon);
         });
     }
 
@@ -277,12 +310,22 @@ public class ChessGameFrame extends JFrame {
     }
     public  static void dead(String warning){
         JOptionPane j=new JOptionPane();
-        JOptionPane.showMessageDialog(null,warning);
+        ImageIcon icon=new ImageIcon("./images/aniya.png");
+        JOptionPane.showMessageDialog(null,warning,"Winner",JOptionPane.PLAIN_MESSAGE,icon);
+
+
     }
-    public static boolean isClose;
+public static void xie(){
+        JLabel xie=new JLabel();
+    ImageIcon icon=new ImageIcon("./images/aniya.png");
+        xie.setIcon(icon);
+        xie.setSize(200,200);
+        xie.setLocation(790,540);
+        xie.setVisible(true);
+   }
 
     public static void dead2(String warning){
-        int result=JOptionPane.showOptionDialog(null,warning,"Next Step",JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE,null,new String[]{"Exit","Restart"},null);
+        int result=JOptionPane.showOptionDialog(null,warning,"Next Step",JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE,null,new String[]{"润了润了","重开重开"},null);
         if(result==JOptionPane.OK_OPTION){
             System.exit(0);
             System.exit(0);
@@ -295,7 +338,7 @@ public class ChessGameFrame extends JFrame {
     }
 
     private void changeSkin(){
-        button6.setLocation(770, 400);
+        button6.setLocation(770, 370);
         button6.setSize(250, 40);
         button6.setFont(new Font("Bradley Hand", Font.BOLD, 30));
         button6.setBorderPainted(false);
@@ -308,36 +351,21 @@ public class ChessGameFrame extends JFrame {
                 isSkin=true;
                 this.repaint();
                 statusLabel.setForeground(Color.WHITE);
-                button1.setBackground(Color.green.darker());
-                button1.setOpaque(true);
-                button1.setBorderPainted(true);
-                button2.setBackground(Color.green.darker());
-                button2.setOpaque(true);
-                button2.setBorderPainted(true);
-                button3.setBackground(Color.green.darker());
-                button3.setOpaque(true);
-                button3.setBorderPainted(true);
-                button4.setBackground(Color.green.darker());
-                button4.setOpaque(true);
-                button4.setBorderPainted(true);
-                button5.setBackground(Color.green.darker());
-                button5.setOpaque(true);
-                button5.setBorderPainted(true);
-                button6.setBackground(Color.green.darker());
-                button6.setOpaque(true);
-                button6.setBorderPainted(true);
-                button7.setBackground(Color.green.darker());
-                button7.setOpaque(true);
-                button7.setBorderPainted(true);
-                button8.setBackground(Color.green.darker());
-                button8.setOpaque(true);
-                button8.setBorderPainted(true);
-                button10.setBackground(Color.green.darker());
-                button10.setOpaque(true);
-                button10.setBorderPainted(true);
+
+                button1.setForeground(Color.WHITE);
+                button2.setForeground(Color.WHITE);
+                button3.setForeground(Color.WHITE);
+                button4.setForeground(Color.WHITE);
+                button5.setForeground(Color.WHITE);
+                button6.setForeground(Color.WHITE);
+                button7.setForeground(Color.WHITE);
+                button8.setForeground(Color.WHITE);
+                button9.setForeground(Color.WHITE);
+                button10.setForeground(Color.WHITE);
+                loadwrong.setForeground(Color.WHITE);
 
 
-                ImageIcon icon2=new ImageIcon("./images/img2.jpg");
+                ImageIcon icon2=new ImageIcon("./images/gou.png");
                 im.setIcon(icon2);
                 icon2.setImage(icon2.getImage().getScaledInstance(1000,750 , Image.SCALE_DEFAULT));
                 im.setHorizontalAlignment(SwingConstants.CENTER);
@@ -348,26 +376,19 @@ public class ChessGameFrame extends JFrame {
             } else if(n.get() %2==0){
                 statusLabel.setForeground(Color.BLACK);
                 isSkin=false;
-                button1.setOpaque(false);
-                button1.setBorderPainted(true);
-                button2.setOpaque(false);
-                button2.setBorderPainted(true);
-                button3.setOpaque(false);
-                button3.setBorderPainted(true);
-                button4.setOpaque(false);
-                button4.setBorderPainted(true);
-                button5.setOpaque(false);
-                button5.setBorderPainted(true);
-                button6.setOpaque(false);
-                button6.setBorderPainted(true);
-                button7.setOpaque(false);
-                button7.setBorderPainted(true);
-                button8.setOpaque(false);
-                button8.setBorderPainted(true);
-                button10.setOpaque(false);
-                button10.setBorderPainted(true);
 
-                ImageIcon icon=new ImageIcon("./images/img.png");
+                button1.setForeground(Color.BLACK);
+                button2.setForeground(Color.BLACK);
+                button3.setForeground(Color.BLACK);
+                button4.setForeground(Color.BLACK);
+                button5.setForeground(Color.BLACK);
+                button6.setForeground(Color.BLACK);
+                button7.setForeground(Color.BLACK);
+                button8.setForeground(Color.BLACK);
+                button9.setForeground(Color.BLACK);
+                button10.setForeground(Color.BLACK);
+                loadwrong.setForeground(Color.BLACK);
+                ImageIcon icon=new ImageIcon("./images/bb.png");
                 im.setIcon(icon);
 //        icon.setImage(icon.getImage().getScaledInstance(1000,750 , Image.SCALE_DEFAULT));
                 im.setHorizontalAlignment(SwingConstants.CENTER);
@@ -521,7 +542,7 @@ public class ChessGameFrame extends JFrame {
     }
 
     private void addFileChooser(){
-        button7.setLocation(10, 400);
+        button7.setLocation(10, 370);
         button7.setSize(200, 40);
         button7.setFont(new Font("Bradley Hand", Font.BOLD, 35));
         button7.setOpaque(true);

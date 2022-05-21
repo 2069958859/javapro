@@ -10,37 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df82d08c-7cfc-4fba-9f0e-a35dc22e4f98" name="Changes" comment="wph">
-      <change afterPath="$PROJECT_DIR$/images/bb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/bu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/dog.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/im3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/nn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/ye.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/太阳.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/aniya.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/gag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/gou.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/zz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save6(1).txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Music/Video.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bishop-black2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/bishop-black2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bishop-white2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/bishop-white2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/king-black2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/king-black2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/king-white2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/king-white2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/knight-black2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/knight-black2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/knight-white2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/knight-white2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/pawn-black2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/pawn-black2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/pawn-white2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/pawn-white2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/queen-black2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/queen-black2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/queen-white2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/queen-white2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rook-black2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/rook-black2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/rook-white2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/rook-white2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chess/controller/ClickController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/controller/ClickController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/dog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/img.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/chess/model/ChessComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/model/ChessComponent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/chess/view/ChessGameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/view/ChessGameFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chess/view/ChessStartFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/view/ChessStartFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chess/view/ChessStartFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/view/ChessStartFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chess/view/Chessboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/view/Chessboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save6.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ChessComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ChessComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ChessGameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChessGameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ChessStartFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChessStartFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Chessboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653056903937</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="wph">
+      <created>1653126884266</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1653126884266</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,7 +179,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/view/ChessGameFrame.java</url>
-          <line>268</line>
+          <line>301</line>
           <properties class="view.ChessGameFrame" method="addBackground">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
