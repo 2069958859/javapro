@@ -8,7 +8,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -45,8 +44,9 @@ public class Chessboard extends JComponent {
         Chessboard.x = x;
     }
 //     static int huiqicishu=
-    public static boolean swap;
+
     private static final int CHESSBOARD_SIZE = 8;
+
     private final ChessComponent[][] chessComponents = new ChessComponent[CHESSBOARD_SIZE][CHESSBOARD_SIZE];
     public static ChessColor currentColor = ChessColor.WHITE;
 
@@ -63,7 +63,7 @@ public class Chessboard extends JComponent {
         return CHESS_SIZE;
     }
 
-//    public boolean isDead = false;
+    //    public boolean isDead = false;
     public boolean isDeadw = false;
     public boolean isDeadb = false;
 
@@ -136,11 +136,9 @@ public class Chessboard extends JComponent {
         add(chessComponents[row][col] = chessComponent);
     }
 
-
-
-
     public void swapChessComponents(ChessComponent chess1, ChessComponent chess2) {  //将死
         // Note that chess1 has higher priority, 'destroys' chess2 if exists.
+
         if (!(chess2 instanceof EmptySlotComponent)) {
             remove(chess2);
 
@@ -176,7 +174,7 @@ public class Chessboard extends JComponent {
 //        }
 
 
-            record(row1, col1, row2, col2);
+        record(row1, col1, row2, col2);
         AtomicInteger count = new AtomicInteger(0);
         setN(count);
         setX(0);
@@ -192,6 +190,9 @@ public class Chessboard extends JComponent {
         if (isDeadw) {
             dead2(warningw);
             initall();
+            recordchessboard.clear();
+            recordchessboard.add("R0N0B0Q0K0B0N0R0*P0P0P0P0P0P0P0P0*_0_0_0_0_0_0_0_0*_0_0_0_0_0_0_0_0*_0_0_0_0_0_0_0_0*_0_0_0_0_0_0_0_0*p0p0p0p0p0p0p0p0*r0n0b0q0k0b0n0r0*w");
+
             setCurrentColor(ChessColor.BLACK);
             showwhite();
             repaint();
@@ -200,6 +201,9 @@ public class Chessboard extends JComponent {
         else if (isDeadb) {
             dead2(warningb);
             initall();
+            recordchessboard.clear();
+            recordchessboard.add("R0N0B0Q0K0B0N0R0*P0P0P0P0P0P0P0P0*_0_0_0_0_0_0_0_0*_0_0_0_0_0_0_0_0*_0_0_0_0_0_0_0_0*_0_0_0_0_0_0_0_0*p0p0p0p0p0p0p0p0*r0n0b0q0k0b0n0r0*w");
+
             setCurrentColor(ChessColor.BLACK);
             showwhite();
             repaint();
@@ -286,15 +290,15 @@ public class Chessboard extends JComponent {
 
 //                                    if (!otherChessCanMoveTo(chess) && !kingCanMoveTo(king) && king.getChessColor() == ChessColor.BLACK) {
 //
-                                        return true;
+                                    return true;
 //                                    }
                                 }
-                               else if (chess.getChessColor() != king.getChessColor() && chess.canMoveTo(chessComponents, king.getChessboardPoint()) && king.getChessColor() == ChessColor.WHITE) {
+                                else if (chess.getChessColor() != king.getChessColor() && chess.canMoveTo(chessComponents, king.getChessboardPoint()) && king.getChessColor() == ChessColor.WHITE) {
                                     dead("The white king is in danger!");
 
 //                                    if (!otherChessCanMoveTo(chess) && !kingCanMoveTo(king) && king.getChessColor() == ChessColor.BLACK) {
 //
-                                        return true;
+                                    return true;
 //                                    }
                                 }
 
@@ -427,12 +431,9 @@ public class Chessboard extends JComponent {
         }
     }
 
-    public static void swapColor() {
+    public void swapColor() {
         currentColor = currentColor == ChessColor.BLACK ? ChessColor.WHITE : ChessColor.BLACK;
     }
-
-
-
 
     public void initRookOnBoard(int row, int col, ChessColor color) {
         ChessComponent chessComponent = new RookChessComponent(new ChessboardPoint(row, col), calculatePoint(row, col), color, clickController, CHESS_SIZE);
@@ -604,7 +605,7 @@ public class Chessboard extends JComponent {
                     setCurrentColor(ChessColor.WHITE);
                 } else {//无黑白方
                     nonextfang();
-                    initiateEmptyChessboard();
+//                    initiateEmptyChessboard();
                     repaint();
                     break;
 
@@ -617,8 +618,3 @@ public class Chessboard extends JComponent {
         }
     }
 }
-
-
-
-
-

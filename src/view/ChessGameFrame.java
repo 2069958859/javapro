@@ -11,7 +11,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
@@ -43,16 +42,18 @@ public class ChessGameFrame extends JFrame {
     static JLabel loadwrong = new JLabel();
     static JButton button1 = new JButton("Restart");
     static JButton button2 = new JButton("Save");
-    static JButton button3 = new JButton("Change Color");
+    static JButton button3 = new JButton("Change Pic");
     static JButton button4 = new JButton("Load");
     static JButton button5 = new JButton("Music");
     static JButton button6 = new JButton("Change Skin");
     static JButton button10 = new JButton("Playback");
-    JButton button8 = new JButton("repentance");
+    JButton button8 = new JButton("Repentance");
     static  JLabel im=new JLabel();
-    static JButton button7=new JButton("open");
+    static JButton button7=new JButton("Open");
     static File file;
+
     public ChessGameFrame(int width, int height) {
+
         setTitle("2022 CS102A Project Demo"); //设置标题
         this.WIDTH = width;
         this.HEIGHT = height;
@@ -66,7 +67,7 @@ public class ChessGameFrame extends JFrame {
         addChangeButton();
 //        addLoadButton();
         addPlayMusicButton();
-       // addStopMusicButton();
+        // addStopMusicButton();
         addChongZhiButton();
         addSaveButton();
         addhuiqibutton();
@@ -76,13 +77,18 @@ public class ChessGameFrame extends JFrame {
         playback();
         changeSkin();
         addBackground();
+        Toolkit kit = Toolkit.getDefaultToolkit();
+        Image img = kit.getImage("./images/nn.png");
+
+        Cursor mouse = kit.createCustomCursor(img, new Point(50,50), "stick");
+        this.setCursor(mouse);
     }
 
     private void addLabel() {
         statusLabel.setText("White's Round");
-        statusLabel.setLocation(HEIGHT, HEIGHT / 10);
-        statusLabel.setSize(200, 40);
-        statusLabel.setFont(new Font("Rockwell", Font.BOLD, 20));
+        statusLabel.setLocation(700, HEIGHT / 50);
+        statusLabel.setSize(300, 50);
+        statusLabel.setFont(new Font("Bradley Hand", Font.BOLD, 40));
         add(statusLabel);
     }
 
@@ -93,7 +99,6 @@ public class ChessGameFrame extends JFrame {
         if (getCurrentColor() == ChessColor.WHITE) {
             statusLabel.setText("Black's Round");
         }
-
     }
 
     public static void changelabelload() {
@@ -110,13 +115,16 @@ public class ChessGameFrame extends JFrame {
 
     private void addChongZhiButton() {
 
-        button1.setLocation(HEIGHT, HEIGHT / 10 + 40);
-        button1.setSize(200, 30);
-        button1.setFont(new Font("Rockwell", Font.BOLD, 20));
+        button1.setLocation(10, 100);
+        button1.setSize(200, 40);
+        button1.setFont(new Font("Bradley Hand", Font.BOLD, 35));
+        button1.setBorderPainted(false);
+        button1.setContentAreaFilled(false);
         add(button1);
 
         button1.addActionListener(e -> {
             gameController.getChessboard().initall();
+            recordchessboard.clear();
             recordchessboard.add("R0N0B0Q0K0B0N0R0*P0P0P0P0P0P0P0P0*_0_0_0_0_0_0_0_0*_0_0_0_0_0_0_0_0*_0_0_0_0_0_0_0_0*_0_0_0_0_0_0_0_0*p0p0p0p0p0p0p0p0*r0n0b0q0k0b0n0r0*w");
             Chessboard.setCurrentColor(ChessColor.WHITE);
 
@@ -134,9 +142,11 @@ public class ChessGameFrame extends JFrame {
 
     private void addhuiqibutton() {
 
-        button8.setLocation(HEIGHT, HEIGHT / 10 + 190);
+        button8.setLocation(10, 300);
         button8.setSize(200, 40);
-        button8.setFont(new Font("Rockwell", Font.BOLD, 20));
+        button8.setFont(new Font("Bradley Hand", Font.BOLD, 30));
+        button8.setBorderPainted(false);
+        button8.setContentAreaFilled(false);
         add(button8);
         button8.addActionListener((e) -> {
             x++;
@@ -174,16 +184,20 @@ public class ChessGameFrame extends JFrame {
             writeFiles(transferToText);
 
         });
-        button2.setLocation(HEIGHT, HEIGHT / 10 + 70);
+        button2.setLocation(10, 200);
         button2.setSize(200, 40);
-        button2.setFont(new Font("Rockwell", Font.BOLD, 20));
+        button2.setFont(new Font("Bradley Hand", Font.BOLD, 35));
+        button2.setBorderPainted(false);
+        button2.setContentAreaFilled(false);
         add(button2);
     }
 
     private void addChangeButton() {
-        button3.setLocation(HEIGHT, HEIGHT / 10 + 150);
+        button3.setLocation(790, 100);
         button3.setSize(200, 40);
-        button3.setFont(new Font("Rockwell", Font.BOLD, 20));
+        button3.setFont(new Font("Bradley Hand", Font.BOLD, 30));
+        button3.setBorderPainted(false);
+        button3.setContentAreaFilled(false);
         add(button3);
         AtomicInteger n= new AtomicInteger();
         button3.addActionListener((e) ->{
@@ -197,13 +211,15 @@ public class ChessGameFrame extends JFrame {
             }});
     }
     private void playback() {
-        button10.setLocation(HEIGHT, HEIGHT/10+230);
+        button10.setLocation(790, 200);
         button10.setSize(200, 40);
-        button10.setFont(new Font("Rockwell", Font.BOLD, 20));
+        button10.setFont(new Font("Bradley Hand", Font.BOLD, 35));
+        button10.setBorderPainted(false);
+        button10.setContentAreaFilled(false);
         add(button10);
         button10.addActionListener((e) ->{
-           Thread newTry = new Thread(new MyRunable(this));
-           newTry.start();
+            Thread newTry = new Thread(new MyRunable(this));
+            newTry.start();
 
 //           if(currentColor==ChessColor.WHITE){
 //               showwhite();
@@ -212,8 +228,8 @@ public class ChessGameFrame extends JFrame {
 //               showblack();
 //           }
 //           repaint();
-            });
-}
+        });
+    }
 
 //    private void addLoadButton() {
 //
@@ -231,9 +247,11 @@ public class ChessGameFrame extends JFrame {
 
     private void addPlayMusicButton() {
 
-        button5.setLocation(HEIGHT, HEIGHT / 10 + 360);
+        button5.setLocation(790, 300);
         button5.setSize(200, 40);
-        button5.setFont(new Font("Rockwell", Font.BOLD, 20));
+        button5.setFont(new Font("Bradley Hand", Font.BOLD, 35));
+        button5.setBorderPainted(false);
+        button5.setContentAreaFilled(false);
         add(button5);
 
         //背景音乐启动
@@ -249,7 +267,7 @@ public class ChessGameFrame extends JFrame {
     }
 
     private void addBackground(){
-        ImageIcon icon=new ImageIcon("./images/img.png");
+        ImageIcon icon=new ImageIcon("./images/bb.png");
         im.setIcon(icon);
 //        icon.setImage(icon.getImage().getScaledInstance(1000,750 , Image.SCALE_DEFAULT));
         im.setHorizontalAlignment(SwingConstants.CENTER);
@@ -277,9 +295,11 @@ public class ChessGameFrame extends JFrame {
     }
 
     private void changeSkin(){
-        button6.setLocation(HEIGHT, HEIGHT / 10 + 420);
-        button6.setSize(200, 40);
-        button6.setFont(new Font("Rockwell", Font.BOLD, 20));
+        button6.setLocation(770, 400);
+        button6.setSize(250, 40);
+        button6.setFont(new Font("Bradley Hand", Font.BOLD, 30));
+        button6.setBorderPainted(false);
+        button6.setContentAreaFilled(false);
         add(button6);
         AtomicInteger n= new AtomicInteger();
         button6.addActionListener((e) ->{
@@ -365,7 +385,7 @@ public class ChessGameFrame extends JFrame {
         Chessboard chessboard = new Chessboard(CHESSBOARD_SIZE, CHESSBOARD_SIZE);
         chessboard.setBorder(BorderFactory.createLineBorder(Color.BLUE,8,true));
         gameController = new GameController(chessboard);
-        chessboard.setBounds(getHEIGHT()/ 10, getHEIGHT()/ 10,getHEIGHT()*4/5,getHEIGHT()*4/5);
+        chessboard.setBounds(200, 75,getHEIGHT()*4/5,getHEIGHT()*4/5);
         add(chessboard);
     }
 //
@@ -440,7 +460,7 @@ public class ChessGameFrame extends JFrame {
 
 
     }
-//    public void removechess() {
+    //    public void removechess() {
 //        for (int i = 0; i < 8; i++) {
 //            for (int j = 0; j < 8; j++) {
 //                if (chessComponent[i][j] != null) {
@@ -451,9 +471,9 @@ public class ChessGameFrame extends JFrame {
 //    }
     private void addloadLabel() {
         loadwrong.setText("");
-        loadwrong.setLocation(HEIGHT, HEIGHT / 10 + 110);
-        loadwrong.setSize(200, 40);
-        loadwrong.setFont(new Font("Rockwell", Font.BOLD, 15));
+        loadwrong.setLocation(50,15);
+        loadwrong.setSize(1000, 40);
+        loadwrong.setFont(new Font("Bradley Hand", Font.BOLD, 40));
         add(loadwrong);
 
     }
@@ -463,7 +483,7 @@ public class ChessGameFrame extends JFrame {
 
     }
     public static void nonextfang() {
-        loadwrong.setText("no next player");
+        statusLabel.setText("no next player");
 
     }
     public static void noteight() {
@@ -471,7 +491,7 @@ public class ChessGameFrame extends JFrame {
 
     }
     public static void nottxt(){
-            loadwrong.setText("Wrong Format");
+        loadwrong.setText("Wrong Format");
     }
 
 
@@ -501,25 +521,26 @@ public class ChessGameFrame extends JFrame {
     }
 
     private void addFileChooser(){
-        button7.setLocation(HEIGHT, HEIGHT / 10 + 470);
+        button7.setLocation(10, 400);
         button7.setSize(200, 40);
-        button7.setFont(new Font("Rockwell", Font.BOLD, 20));
+        button7.setFont(new Font("Bradley Hand", Font.BOLD, 35));
         button7.setOpaque(true);
+        button7.setBorderPainted(false);
+        button7.setContentAreaFilled(false);
         add(button7);
         button7.addActionListener(e -> {
             // TODO Auto-generated method stub
-            JFileChooser jfc=new JFileChooser("/Users/wangpinhuang/Desktop/proj");
+            JFileChooser jfc=new JFileChooser("/Users/wangpinhuang/IdeaProjects/javapro");
             jfc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES );
             jfc.showDialog(new JLabel(), "选择");
             file=jfc.getSelectedFile();
             gameController.loadGameFromFile(file.getAbsolutePath());
         });
-        }
+    }
 
     public GameController getGameController() {
         return gameController;
     }
-}
 
 
-
+   }

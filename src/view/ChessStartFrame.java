@@ -22,7 +22,7 @@ public class ChessStartFrame extends JFrame {
         setLayout(null);
         StartButton();
        JLabel im=new JLabel();
-        ImageIcon icon=new ImageIcon("./images/img.png");
+        ImageIcon icon=new ImageIcon("./images/im3.png");
         im.setIcon(icon);
         im.setHorizontalAlignment(SwingConstants.CENTER);
         im.setSize(WIDTH,HEIGHT);
@@ -31,10 +31,11 @@ public class ChessStartFrame extends JFrame {
     }
     public void StartButton(){
         JButton start=new JButton("Start Your Game!");
-
-        start.setLocation(HEIGHT, HEIGHT / 10 + 120);
-        start.setSize(200, 60);
-        start.setFont(new Font("Rockwell", Font.BOLD, 20));
+        start.setBorderPainted(false);
+        start.setContentAreaFilled(false);
+        start.setLocation(HEIGHT-300, HEIGHT / 10 + 120);
+        start.setSize(500, 60);
+        start.setFont(new Font("Bradley Hand", Font.BOLD, 40));
         add(start);
         start.addActionListener(new ActionListener(){
             @Override
