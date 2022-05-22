@@ -10,19 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df82d08c-7cfc-4fba-9f0e-a35dc22e4f98" name="Changes" comment="wph">
-      <change afterPath="$PROJECT_DIR$/images/aniya.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/gag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/gou.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/zz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/save6(1).txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Music/Video.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/dog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chess/model/ChessComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/model/ChessComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/chess/view/ChessGameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/view/ChessGameFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ChessComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ChessComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ChessGameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChessGameFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653126884266</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="wph">
+      <created>1653167233332</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653167233333</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
